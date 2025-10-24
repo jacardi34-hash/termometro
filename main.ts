@@ -1,20 +1,25 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(0)
+    basic.showNumber(minimo)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(maximo)
 })
 let maximo = 0
+let minimo = 0
 let current = input.temperature()
-let minimo = current
+minimo = current
 maximo = current
 basic.showIcon(IconNames.Heart)
 basic.forever(function () {
-    if (current < 38) {
+    if (true) {
         basic.showIcon(IconNames.Sad)
-        music.play(music.stringPlayable("- - - - - - - - ", 120), music.PlaybackMode.UntilDone)
+        music.ringTone(932)
     } else {
-        basic.showIcon(IconNames.Heart)
+        basic.showIcon(IconNames.Sad)
+        music.ringTone(932)
+        if (!(false)) {
+            basic.showIcon(IconNames.Heart)
+        }
     }
     if (current > maximo) {
         maximo = current
